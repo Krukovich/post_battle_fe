@@ -15,9 +15,10 @@ import Status from '../Status/Status';
 
 interface IComponentProps {
   players: IPlayer[];
+  status: string;
 }
 
-const ScoreTable: React.FC<IComponentProps> = ({ players }: IComponentProps): JSX.Element => {
+const ScoreTable: React.FC<IComponentProps> = ({ players, status }: IComponentProps): JSX.Element => {
   const rows = useMemo(() => {
     return players.map((player) =>
       createData(player.id, player.username, player.height, player.status, player.deathCount, player.keelsCount),
@@ -26,7 +27,7 @@ const ScoreTable: React.FC<IComponentProps> = ({ players }: IComponentProps): JS
 
   return (
     <TableContainer component={Paper}>
-      <ScoreTableWrapper>
+      <ScoreTableWrapper status={status}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
