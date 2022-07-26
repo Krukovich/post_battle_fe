@@ -3,4 +3,6 @@ export interface IPlayer {
   username: string;
   height: number;
   status: string;
+  deathCount: number;
+  keelsCount: number;
 }

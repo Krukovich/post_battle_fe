@@ -7,8 +7,10 @@ export const createData = (
   nickName: string,
   score: number,
   state: string,
-): { score: number; nickName: string; state: string } => {
-  return { nickName, score, state };
+  deathCount: number,
+  keelsCount: number,
+): { score: number; nickName: string; state: string; deathCount: number; keelsCount: number } => {
+  return { nickName, score, state, deathCount, keelsCount };
 };
 
 export const Item = styled(Paper)(({ theme }) => ({

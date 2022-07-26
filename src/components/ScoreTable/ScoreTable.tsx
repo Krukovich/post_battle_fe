@@ -9,6 +9,8 @@ import Paper from '@mui/material/Paper';
 import { TABLE_HEADERS } from '../../constants';
 import { createData } from '../../utils';
 import { IPlayer } from '../../interface';
+import { Tooltip } from '@mui/material';
+import { TooltipValueWrapper } from '../../styled';
 
 interface IComponentProps {
   players: IPlayer[];
@@ -16,7 +18,9 @@ interface IComponentProps {
 
 const ScoreTable: React.FC<IComponentProps> = ({ players }: IComponentProps): JSX.Element => {
   const rows = useMemo(() => {
-    return players.map((player) => createData(player.username, player.height, player.status));
+    return players.map((player) =>
+      createData(player.username, player.height, player.status, player.deathCount, player.keelsCount),
+    );
   }, [players]);
 
   return (
@@ -33,7 +37,17 @@ const ScoreTable: React.FC<IComponentProps> = ({ players }: IComponentProps): JS
           {rows.map((row) => (
             <TableRow key={row.nickName} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
               <TableCell component="th" scope="row">
-                {row.nickName}
+                <Tooltip
+                  title={
+                    <TooltipValueWrapper>
+                      <span>kills: {row.keelsCount}</span>
+                      <span>deaths: {row.deathCount}</span>
+                    </TooltipValueWrapper>
+                  }
+                  arrow
+                >
+                  <span>{row.nickName}</span>
+                </Tooltip>
               </TableCell>
               <TableCell align="right">{row.score}</TableCell>
               <TableCell align="right">{row.state}</TableCell>

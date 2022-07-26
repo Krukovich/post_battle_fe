@@ -12,7 +12,7 @@ const useRequest = (request: any) => {
     request()
       .then((response: { data: IPlayer[] }) => {
         const transformedPlayers: IPlayer[] = transformPlayers(response.data);
-        setData(transformedPlayers);
+        setData([...transformedPlayers, ...transformedPlayers]);
       })
       .catch((error: React.SetStateAction<string>) => setError(error))
       .finally(() => setLoading(false));

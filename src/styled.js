@@ -13,3 +13,8 @@ export const SpinnerWrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export const TooltipValueWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
