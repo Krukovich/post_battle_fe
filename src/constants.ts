@@ -1,6 +1,7 @@
 export const MIN_COUNT_KILLS_OR_DEATH = 1;
 export const MAX_COUNT_KILLS_OR_DEATH = 200;
 export const MATCH_TITLE = 'Post battle screen';
+export const FAKE_PLAYERS_URL = 'http://localhost:4000/users/';
 
 export const PLAYER_STATUS: Readonly<{ IS_ALIVE: 'isAlive'; IS_DEAD: 'isDead' }> = Object.freeze({
   IS_ALIVE: 'isAlive',
