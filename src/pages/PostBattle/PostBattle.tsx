@@ -1,29 +1,30 @@
 import React from 'react';
-import { Box, Grid, styled } from '@mui/material';
-import Paper from '@mui/material/Paper';
+import { Box, Grid } from '@mui/material';
 import ScoreTable from '../../components/ScoreTable/ScoreTable';
+import TeamTitle from '../../components/TeamTitle/TeamTitle';
+import { MATCH_STATUS, TEAM } from '../../constants';
+import { Item } from '../../utils';
+import { IPlayer } from '../../interface';
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
+interface IComponentProps {
+  players: IPlayer[];
+}
 
-const PostBattle: React.FC = (): JSX.Element => {
+const PostBattle: React.FC<IComponentProps> = ({ players }: IComponentProps): JSX.Element => {
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
           <Grid item xs={6}>
             <Item>
-              <ScoreTable />
+              <TeamTitle teamTitle={TEAM.BEAR} status={MATCH_STATUS.WIN} />
+              <ScoreTable players={players} />
             </Item>
           </Grid>
           <Grid item xs={6}>
             <Item>
-              <ScoreTable />
+              <TeamTitle teamTitle={TEAM.SHEEP} status={MATCH_STATUS.LOSE} />
+              <ScoreTable players={players} />
             </Item>
           </Grid>
         </Grid>
