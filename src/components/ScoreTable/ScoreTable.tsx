@@ -28,12 +28,18 @@ const ScoreTable: React.FC<IComponentProps> = ({ players, status }: IComponentPr
   return (
     <TableContainer component={Paper}>
       <ScoreTableWrapper status={status}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <Table sx={{ minWidth: 650 }} stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
-              <TableCell>{TABLE_HEADERS.NICKNAME}</TableCell>
-              <TableCell align="right">{TABLE_HEADERS.SCORE}</TableCell>
-              <TableCell align="right">{TABLE_HEADERS.STATUS}</TableCell>
+              <TableCell>
+                <span className="table-header">{TABLE_HEADERS.NICKNAME}</span>
+              </TableCell>
+              <TableCell align="right">
+                <span className="table-header">{TABLE_HEADERS.SCORE}</span>
+              </TableCell>
+              <TableCell align="right">
+                <span className="table-header">{TABLE_HEADERS.STATUS}</span>
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -49,7 +55,7 @@ const ScoreTable: React.FC<IComponentProps> = ({ players, status }: IComponentPr
                     }
                     arrow
                   >
-                    <span>{row.nickName}</span>
+                    <span className="table-item">{row.nickName}</span>
                   </Tooltip>
                 </TableCell>
                 <TableCell align="right">{row.score}</TableCell>

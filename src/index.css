@@ -10,3 +10,11 @@ body {
   margin-top: 100px;
   opacity: 0.9;
 }
+
+.table-header {
+  font-weight: bold;
+}
+
+.table-item:hover {
+  cursor: pointer;
+}
