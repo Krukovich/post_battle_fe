@@ -29,10 +29,17 @@ export const PostBattleScoreWrapper = styled.div`
 export const ScoreTableWrapper = styled.div`
   max-height: 500px;
 `;
+
 export const MatchTitleWrapper = styled.div`
   display: flex;
   justify-content: center;
   padding: 40px 0 50px 0;
   text-transform: uppercase;
   font-size: 40px;
+`;
+
+export const InviteButtonWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
 `;

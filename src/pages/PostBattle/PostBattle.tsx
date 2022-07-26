@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box, Grid } from '@mui/material';
+import { Box, Button, Grid } from '@mui/material';
 import ScoreTable from '../../components/ScoreTable/ScoreTable';
 import TeamTitle from '../../components/TeamTitle/TeamTitle';
 import { MATCH_STATUS, MATCH_TITLE, TEAM } from '../../constants';
 import { Item } from '../../utils';
 import { IPlayer } from '../../interface';
-import { PostBattleScoreWrapper, ScoreTableWrapper } from '../../styled';
+import { InviteButtonWrapper, PostBattleScoreWrapper, ScoreTableWrapper } from '../../styled';
 import MatchTitle from '../../components/MatchTitle/MatchTitle';
 
 interface IComponentProps {
@@ -34,6 +34,10 @@ const PostBattle: React.FC<IComponentProps> = ({ players }: IComponentProps): JS
           </Grid>
         </Grid>
       </Box>
+      <InviteButtonWrapper>
+        <Button variant="contained">Invite friend</Button>
+        <audio controls={true} autoPlay={true} loop={true} src="/assets/media/trailer.mp3"></audio>
+      </InviteButtonWrapper>
     </PostBattleScoreWrapper>
   );
 };
