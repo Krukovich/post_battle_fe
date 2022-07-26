@@ -18,3 +18,14 @@ export const TooltipValueWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+export const PostBattleScoreWrapper = styled.div`
+  background-image: url('/assets/img/bg.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+`;
+
+export const ScoreTableWrapper = styled.div`
+  max-height: 500px;
+`;
