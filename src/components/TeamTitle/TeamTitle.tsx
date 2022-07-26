@@ -1,5 +1,5 @@
 import React from 'react';
-import { TitleWrapper } from './styled';
+import { TitleWrapper } from '../../styled';
 import { MATCH_STATUS } from '../../constants';
 
 interface IComponentProps {

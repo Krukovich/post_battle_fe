@@ -16,7 +16,7 @@ interface IComponentProps {
 
 const ScoreTable: React.FC<IComponentProps> = ({ players }: IComponentProps): JSX.Element => {
   const rows = useMemo(() => {
-    return players.map((player) => createData(player.username, player.height, 'gfsdgfdsg'));
+    return players.map((player) => createData(player.username, player.height, player.status));
   }, [players]);
 
   return (

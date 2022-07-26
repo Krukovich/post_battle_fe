@@ -5,3 +5,11 @@ export const TitleWrapper = styled.span`
   font-weight: bold;
   font-size: 20px;
 `;
+
+export const SpinnerWrapper = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
