@@ -4,13 +4,14 @@ import { IPlayer } from './interface';
 import { MAX_COUNT_KILLS_OR_DEATH, MIN_COUNT_KILLS_OR_DEATH, PLAYER_STATUS } from './constants';
 
 export const createData = (
+  id: number,
   nickName: string,
   score: number,
   state: string,
   deathCount: number,
   keelsCount: number,
-): { score: number; nickName: string; state: string; deathCount: number; keelsCount: number } => {
-  return { nickName, score, state, deathCount, keelsCount };
+): { id: number; score: number; nickName: string; state: string; deathCount: number; keelsCount: number } => {
+  return { id, nickName, score, state, deathCount, keelsCount };
 };
 
 export const Item = styled(Paper)(({ theme }) => ({
