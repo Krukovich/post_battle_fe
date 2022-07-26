@@ -7,6 +7,7 @@ import { Item } from '../../utils';
 import { IPlayer } from '../../interface';
 import { InviteButtonWrapper, PostBattleScoreWrapper, ScoreTableWrapper } from '../../styled';
 import MatchTitle from '../../components/MatchTitle/MatchTitle';
+import SendIcon from '@mui/icons-material/Send';
 
 interface IComponentProps {
   players: IPlayer[];
@@ -35,7 +36,9 @@ const PostBattle: React.FC<IComponentProps> = ({ players }: IComponentProps): JS
         </Grid>
       </Box>
       <InviteButtonWrapper>
-        <Button variant="contained">Invite friend</Button>
+        <Button variant="contained" href="mailto:" endIcon={<SendIcon />}>
+          Friend request
+        </Button>
         <audio controls={true} autoPlay={true} loop={true} src="/assets/media/trailer.mp3"></audio>
       </InviteButtonWrapper>
     </PostBattleScoreWrapper>
